@@ -61,9 +61,9 @@ class UnfishImages:
 
 
 if __name__ == "__main__":
-
     try:
         archive_name = sys.argv[1]
+        new_archive_name = sys.argv[2]
         archive_path = os.path.join(os.getcwd(), 'data', archive_name)
 
         if not os.path.isfile(archive_path):
@@ -80,4 +80,4 @@ if __name__ == "__main__":
     zipper = Zipper(archive_path, extracted_path)
     zipper.unzip_images()
     unfish.transform_images()
-    zipper.zip_back('new_images')
+    zipper.zip_back(new_archive_name)
